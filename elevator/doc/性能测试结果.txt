@@ -1,0 +1,117 @@
+测试结果包括电梯服务乘客ID，服务乘客总数，花费总时间
+
+测试用例：
+vector<int> ID  = {  1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20 };
+vector<int> Wit = { 150,90,100,88,68,79,120,110,90,80,200,100,50,60,60,55,74,80,75,65 };
+vector<int> Des = { -1,20,15, 8,12,11,10, 6, 9,10,20,15, 6, 7, 8, 9,17, 2,-1,19 };
+vector<int> Cur = { 11, 0, 6,12,12,10,11,15,-1,20,-1, 1, 1,17,19,-1,17, 9,10,10 };
+
+输出结果：
+
+BUS算法：
+< CONTROLLER > Runner: BUS
+               Elevator 0 Has Served 8 Passengers.
+               Cost Time:
+               Passenger 1: 36
+               Passenger 8: 30
+               Passenger 14: 29
+               Passenger 15: 28
+               Passenger 10: 26
+               Passenger 17: 19
+               Passenger 20: 15
+               Passenger 3: 11
+
+               Elevator 1 Has Served 2 Passengers.
+               Cost Time:
+               Passenger 18: 35
+               Passenger 6: 8
+
+               Elevator 2 Has Served 6 Passengers.
+               Cost Time:
+               Passenger 11: 58
+               Passenger 2: 58
+               Passenger 12: 53
+               Passenger 16: 47
+               Passenger 9: 47
+               Passenger 19: 38
+
+               Elevator 3 Has Served 4 Passengers.
+               Cost Time:
+               Passenger 13: 44
+               Passenger 4: 30
+               Passenger 7: 28
+               Passenger 5: 26
+
+               Total Cost Time: 666
+
+LOOK算法：
+< CONTROLLER > Runner: SCAN
+               Elevator 0 Has Served 6 Passengers.
+               Cost Time:
+               Passenger 13: 11
+               Passenger 1: 10
+               Passenger 8: 8
+               Passenger 15: 7
+               Passenger 7: 6
+               Passenger 17: 4
+
+               Elevator 1 Has Served 5 Passengers.
+               Cost Time:
+               Passenger 19: 7
+               Passenger 18: 6
+               Passenger 20: 5
+               Passenger 3: 4
+               Passenger 6: 3
+               
+               Elevator 2 Has Served 5 Passengers.
+               Cost Time:
+               Passenger 11: 6
+               Passenger 16: 5
+               Passenger 9: 5
+               Passenger 2: 3
+               Passenger 12: 2
+               
+               Elevator 3 Has Served 4 Passengers.
+               Cost Time:
+               Passenger 5: 7
+               Passenger 14: 6
+               Passenger 4: 5
+               Passenger 10: 4
+               
+               Total Cost Time: 114
+
+SCAN算法：
+< CONTROLLER > Runner: LOOK
+               Elevator 0 Has Served 6 Passengers.
+               Cost Time:
+               Passenger 3: 11
+               Passenger 1: 10
+               Passenger 14: 8
+               Passenger 4: 7
+               Passenger 7: 5
+               Passenger 10: 5
+
+               Elevator 1 Has Served 6 Passengers.
+               Cost Time:
+               Passenger 12: 11
+               Passenger 13: 10
+               Passenger 19: 9
+               Passenger 18: 6
+               Passenger 20: 4
+               Passenger 6: 3
+
+               Elevator 2 Has Served 4 Passengers.
+               Cost Time:
+               Passenger 2: 6
+               Passenger 11: 6
+               Passenger 16: 4
+               Passenger 9: 4
+
+               Elevator 3 Has Served 4 Passengers.
+               Cost Time:
+               Passenger 8: 7
+               Passenger 15: 6
+               Passenger 17: 4
+               Passenger 5: 1
+
+               Total Cost Time: 127

@@ -1,0 +1,61 @@
+第二阶段程序，已作废
+#include "Elevator.cpp"
+#include "Passenger.cpp"
+#include "Controller.cpp"
+
+using namespace std;
+
+/** 第二阶段程序 
+ * - 实现了乘客类 Passenger、电梯类 Elevator和控制系统类 Controller的基本功能
+ * - [基准调度算法]
+ *   实现了基准调度算法 BusRunner 和 电梯核心调度算法 STFdispatch(最短时间优先)
+ * - [多电梯支持] 
+ *   用户可指定任意数量的乘客并依次输入其基本信息，
+ *   控制程序会根据 STFdispatch 为每名乘客调度合适(即运送时间最短)的电梯，
+ *   电梯会以 BusRunner 的运行方式承载乘客
+ * - [电梯状态监控]
+ *   用户可通过电梯类的 showInfo 接口查看指定电梯当前运行状态，
+ *   包括：1.电梯编号 2.当前承载人数和重量 3.当前所在楼层号 4.可达楼层号 5.运行方向
+ *   控制程序也会根据这些信息实时监测电梯状态和故障情况
+*/
+int main()
+{
+    Controller *controller = new Controller();
+    cout << "System Init Completed." << endl;
+    
+    int psgNum;
+    int id, wt, des, cur;
+
+    cout << "Please Enter the Number of the Passengers:" << endl;
+    cin >> psgNum;
+    for(int i = 0; i < psgNum; ++i)
+    {
+        cout << endl << "Passenger " << i+1 << ":" << endl << "ID: ";
+        cin >> id;
+        cout << "Weight(KG): ";
+        cin >> wt;
+        cout << "Destination Level: ";
+        cin >> des;
+        cout << "Current Level: ";
+        cin >> cur;
+
+        Passenger psg = Passenger(id, wt, des, cur);
+        controller->reqRecv(psg);
+    }
+
+    cout << endl << "-----------------------------------------------------------------" << endl << endl;
+    cout << "Enter the ID of Elevator to See the Status of Specified Elevator." << endl;
+    while(TRUE)
+    {
+        cout << "ID: ";
+        cin >> id;
+        if(id > 3)
+        {
+            cout << "There is No Elevator " << id << " !!" << endl << endl;
+            continue;
+        }
+        controller->elev[id]->showInfo();
+        cout << endl;
+    }
+    return 0;
+}
